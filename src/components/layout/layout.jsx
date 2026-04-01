@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Outlet } from "react-router"
-import Navbar from "../general/navbar"
 import Sidebar from "../general/sidebar"
+import Navbar from "../navbar/navbar"
 
 const Layout = () => {
   const [toggleSidebar, setToggleSidebar] = useState(true)
@@ -10,7 +10,7 @@ const Layout = () => {
       {toggleSidebar && <Sidebar />}
       <div className='w-full'>
         <Navbar setToggleSidebar={setToggleSidebar} />
-        <div className='bg-[#F5F6FA] min-h-[calc(100vh-4rem)] p-10'>
+        <div className='bg-[#F5F6FA] min-h-[calc(100vh-4rem)] p-12'>
           <Outlet />
         </div>
       </div>

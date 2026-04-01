@@ -1,5 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
 import Layout from "./components/layout/layout"
+import Analytics from "./pages/dashboard/analytics"
+import Crypto from "./pages/dashboard/crypto"
+import Ecommerce from "./pages/dashboard/ecommerce"
 
 const router = createBrowserRouter([
   {
@@ -8,15 +11,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: "Analytics page",
+        element: <Analytics />,
       },
       {
         path: "/dashboard-ecommerce",
-        element: "Dashboard Ecommerce page",
+        element: <Ecommerce />,
       },
       {
         path: "/dashboard-crypto",
-        element: "Dashboard Crypto page",
+        element: <Crypto />,
       },
       {
         path: "/pages-settings",
