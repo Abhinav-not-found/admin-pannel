@@ -8,7 +8,7 @@ const Layout = () => {
   return (
     <div className='flex'>
       {toggleSidebar && <Sidebar />}
-      <div className='w-full'>
+      <div className='w-full md:w-full'>
         <Navbar setToggleSidebar={setToggleSidebar} />
         <div className='bg-[#F5F6FA] min-h-[calc(100vh-4rem)] p-12'>
           <Outlet />

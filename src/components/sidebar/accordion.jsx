@@ -9,13 +9,13 @@ const Accordion = ({ name, icon, children, activeRoutes = [] }) => {
   const isActive = activeRoutes.includes(location.pathname)
 
   return (
-    <div className='flex flex-col mb-2'>
+    <div className='flex flex-col'>
       <button
         onClick={() => setOpen(!open)}
         className={`p-2.5 px-5 flex justify-between items-center w-full transition-all duration-200 ${
           isActive
             ? "bg-linear-to-r from-blue-500/10 to-transparent border-l-3 border-l-blue-500"
-            : "hover:bg-white/5"
+            : "hover:bg-white/5 text-neutral-400"
         }`}
       >
         <div className='flex items-center gap-3'>

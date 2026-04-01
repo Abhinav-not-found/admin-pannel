@@ -1,14 +1,24 @@
 import clsx from "clsx"
-import { MoveRight, PanelsTopLeft, SlidersVertical } from "lucide-react"
+import {
+  Calendar,
+  CreditCard,
+  List,
+  MoveRight,
+  PanelsTopLeft,
+  SlidersVertical,
+  User,
+  Users,
+} from "lucide-react"
 import { NavLink } from "react-router"
 import Accordion from "../sidebar/accordion"
+import LargeBtn from "../sidebar/large-btn"
 import ProfileMenu from "../sidebar/profileMenu"
 import Logo from "./logo"
 import Tag from "./tag"
 
 const Sidebar = () => {
   return (
-    <div className='w-80 bg-[#232E3C] text-white'>
+    <div className='min-w-58 md:min-w-66 bg-[#232E3C] text-white'>
       <Container className='space-y-8'>
         <Logo />
         <ProfileMenu />
@@ -18,6 +28,7 @@ const Sidebar = () => {
           name='Dashboards'
           icon={<SlidersVertical className='size-4.5' />}
           activeRoutes={["/", "/dashboard-ecommerce", "/dashboard-crypto"]}
+          chevron={true}
         >
           <Link name='Analytics' to={"/"} />
           <Link name='E-commerce' to={"/dashboard-ecommerce"} pro />
@@ -35,6 +46,7 @@ const Sidebar = () => {
             "/pages-chat",
             "/pages-blank",
           ]}
+          chevron={true}
         >
           <Link name='Settings' to={"/pages-settings"} />
           <Link name='Projects' to={"/pages-projects"} pro />
@@ -44,6 +56,43 @@ const Sidebar = () => {
           <Link name='Chat' to={"/pages-chat"} pro />
           <Link name='Blank' to={"/pages-blank"} />
         </Accordion>
+        <LargeBtn
+          to={"/pages-profile"}
+          icon={<User className='size-4.5' />}
+          name='Profile'
+        />
+        <LargeBtn
+          to={"/pages-invoice"}
+          icon={<CreditCard className='size-4.5' />}
+          name='Invoice'
+        />
+        <LargeBtn
+          to={"/pages-tasks"}
+          icon={<List className='size-4.5' />}
+          name='Tasks'
+          pro={true}
+        />
+        <LargeBtn
+          to={"/pages-calander"}
+          icon={<Calendar className='size-4.5' />}
+          name='Calander'
+          pro
+        />
+        <Accordion
+          name='Auth'
+          icon={<Users className='size-4.5' />}
+          activeRoutes={["/", "/dashboard-ecommerce", "/dashboard-crypto"]}
+          chevron={true}
+        >
+          <Link name='Sign In' to={"/pages-sign-in"} />
+          <Link name='Sign Up' to={"/pages-sign-up"} />
+          <Link name='Reset Password' to={"/pages-reset-password"} pro />
+          <Link name='404 Page' to={"/pages-error"} pro />
+          <Link name='500 Page' to={"/pages-error"} pro />
+        </Accordion>
+      </Section>
+      <Section name={"Components"}>
+        
       </Section>
     </div>
   )
