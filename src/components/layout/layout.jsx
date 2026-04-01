@@ -4,7 +4,7 @@ import Sidebar from "../general/sidebar"
 import Navbar from "../navbar/navbar"
 
 const Layout = () => {
-  const [toggleSidebar, setToggleSidebar] = useState(true)
+  const [toggleSidebar, setToggleSidebar] = useState(false)
   return (
     <div className='flex'>
       {toggleSidebar && <Sidebar />}
